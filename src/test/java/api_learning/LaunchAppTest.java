@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
-public class Lesson_14 {
+public class LaunchAppTest {
     public static void main(String[] args) {
         // Send a request into Appium server > ask to launch the app
         AppiumDriver<MobileElement> appiumDriver = null;
@@ -28,6 +28,7 @@ public class Lesson_14 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (appiumDriver != null) appiumDriver.quit();
+
+        appiumDriver.quit();
     }
 }
