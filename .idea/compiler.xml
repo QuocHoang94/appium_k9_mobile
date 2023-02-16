@@ -13,4 +13,9 @@
       <module name="appium-k9-mobile" target="19" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="appium-k9-mobile" options="--add-exports jdk.hotspot.agent/sun.jvm.hotspot.utilities=ALL-UNNAMED" />
+    </option>
+  </component>
 </project>
