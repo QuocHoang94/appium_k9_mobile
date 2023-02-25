@@ -2,6 +2,7 @@ package test_flows;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import models.pages.HomeScreen;
 import models.pages.LoginScreen;
 
 public class BaseFlow {
@@ -14,5 +15,9 @@ public class BaseFlow {
 
     public void gotoLoginScreen(){
         new LoginScreen(appiumDriver).bottomNavComp().clickOnLoginIcon();
+    }
+
+    public void gotoFormScreen(){
+        new HomeScreen(appiumDriver).bottomNavComponent().clickOnFormsIcon();
     }
 }

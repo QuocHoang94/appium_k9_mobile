@@ -9,13 +9,13 @@
     "cleanUpCycle": 2000,
     "timeout": 30000,
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
-    "url": "http://address:6000/wd/hub",
-    "host": "address",
+    "url": "http://localhost:6000/wd/hub",
+    "host": "localhost",
     "port": 6000,
     "maxSession": 1,
     "register": true,
     "registerCycle": 5000,
-    "hubHost": "address",
+    "hubHost": "localhost",
     "hubPort": 4444,
     "hubProtocol": "http"
   }

@@ -1,9 +1,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Regression" >
+<suite name="ParameterTest" parallel="tests" thread-count="10">
     <test name="Authentication" >
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="systemPort" value="8300"/>
         <classes>
-            <class name="tests.authen.LoginTestWithBaseTest" />
+            <class name="tests.parallel.TestParameter01" />
+        </classes>
+    </test>
+    <test name="Real Mobile Device" >
+        <parameter name="udid" value="LMK500ZPZXWODEEYTC"/>
+        <parameter name="systemPort" value="8400"/>
+        <classes>
+            <class name="tests.parallel.TestParameter02" />
         </classes>
     </test>
 </suite>
