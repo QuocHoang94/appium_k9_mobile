@@ -19,19 +19,19 @@ public class DriverFactory implements MobileCapabilityTypeEx {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(PLATFORM_NAME, "Android");
         desiredCapabilities.setCapability(AUTOMATION_NAME, "uiautomator2");
-        desiredCapabilities.setCapability(UDID, "3300d3672cca62b9");
+        desiredCapabilities.setCapability(UDID, "emulator-5554");
         desiredCapabilities.setCapability(APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
         URL appiumServer = null;
 
         try {
-            appiumServer = new URL("http://localhost:4723/wd/hub");
+            appiumServer = new URL("http://192.168.8.16:4444/wd/hub");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         if (appiumServer == null)
-            throw new RuntimeException("Can't construct the appium server url @http://localhost:4723/wd/hub");
+            throw new RuntimeException("Can't construct the appium server url @http://192.168.8.16:4444/wd/hub");
 
         switch (platform) {
             case ANDROID:
