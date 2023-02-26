@@ -9,7 +9,7 @@
         </classes>
     </test>
     <test name="Real Mobile Device" >
-        <parameter name="udid" value="LMK500ZPZXWODEEYTC"/>
+        <parameter name="udid" value="emulator-5556"/>
         <parameter name="systemPort" value="8400"/>
         <classes>
             <class name="tests.parallel.TestParameter02" />
