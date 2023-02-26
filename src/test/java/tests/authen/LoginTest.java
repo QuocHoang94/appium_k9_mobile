@@ -13,7 +13,7 @@ public class LoginTest {
 
     @Test
     public void testLogin() {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
         List<LoginCred> loginCreds = new ArrayList<>();
         loginCreds.add(new LoginCred("teo@", "12345678"));
         loginCreds.add(new LoginCred("teo@sth.com", "1234567"));

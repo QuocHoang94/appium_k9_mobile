@@ -1,8 +1,6 @@
 package tests.authen;
 
-import driver.DriverFactory;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+import io.qameta.allure.TmsLink;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import test_data.DataObjectBuilder;
@@ -12,6 +10,7 @@ import tests.BaseTest;
 
 public class LoginTestWithBaseTest extends BaseTest {
 
+    @TmsLink("TEST-123")
     @Test(dataProvider = "loginCredData")
     public void testLogin(LoginCred loginCred) {
         LoginFlow loginFlow = new LoginFlow(getDriver(), loginCred.getEmail(), loginCred.getPassword());

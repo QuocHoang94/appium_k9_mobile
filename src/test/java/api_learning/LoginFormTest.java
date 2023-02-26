@@ -11,11 +11,13 @@ import platform.Platform;
 public class LoginFormTest {
 
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
 
-        try{
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
+
+        try {
+
             // Navigate to Login screen
-            MobileElement navLoginScreenBtnElem  = appiumDriver.findElement(MobileBy.AccessibilityId("Login"));
+            MobileElement navLoginScreenBtnElem = appiumDriver.findElement(MobileBy.AccessibilityId("Login"));
             navLoginScreenBtnElem.click();
 
             // Find Login form elements
@@ -37,11 +39,9 @@ public class LoginFormTest {
 
             // DEBUG PURPOSE ONLY
             Thread.sleep(3000);
-        }catch (Exception e){
+        } catch (Exception e){
             e.printStackTrace();
         }
-
-
 
         appiumDriver.quit();
     }

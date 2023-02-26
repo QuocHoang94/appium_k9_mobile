@@ -10,7 +10,7 @@ import platform.Platform;
 public class LoginWithPOMMod03 {
 
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
         try {
             // Navigate to Login screen

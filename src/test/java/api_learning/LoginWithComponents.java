@@ -11,7 +11,7 @@ import platform.Platform;
 public class LoginWithComponents {
 
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
         try {
             LoginScreen loginScreen = new LoginScreen(appiumDriver);

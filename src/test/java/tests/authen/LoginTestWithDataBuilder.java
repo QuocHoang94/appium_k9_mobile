@@ -14,7 +14,7 @@ public class LoginTestWithDataBuilder {
 
     @Test(dataProvider = "loginCredData")
     public void testLogin(LoginCred loginCred) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
         try {
             LoginFlow loginFlow = new LoginFlow(appiumDriver, loginCred.getEmail(), loginCred.getPassword());
@@ -30,7 +30,7 @@ public class LoginTestWithDataBuilder {
 
     @DataProvider
     public LoginCred[] loginCredData() {
-        String filePath = "/src/test/java/test_data/authen/LoginCreds/LoginCreds.json";
+        String filePath = "/src/test/java/test_data/authen/LoginCreds.json";
         return DataObjectBuilder.buildDataObject(filePath, LoginCred[].class);
     }
 

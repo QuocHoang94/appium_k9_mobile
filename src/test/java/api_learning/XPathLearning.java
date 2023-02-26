@@ -12,8 +12,9 @@ public class XPathLearning {
 
     public static void main(String[] args) {
 
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
-        try{
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
+
+        try {
             // Navigate to Login screen
             MobileElement navLoginScreenBtnElem = appiumDriver.findElement(MobileBy.AccessibilityId("Login"));
             navLoginScreenBtnElem.click();
@@ -32,11 +33,10 @@ public class XPathLearning {
 
             // DEBUG PURPOSE ONLY
             Thread.sleep(3000);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         appiumDriver.quit();
     }
-
 }
