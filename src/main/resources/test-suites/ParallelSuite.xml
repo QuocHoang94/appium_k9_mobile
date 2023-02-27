@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="10" parallel="tests" name="Regression">
+    <test thread-count="10" parallel="tests" name="G8S1LV05133401MM">
+        <parameter name="platformVersion" value="15.0"/>
+        <parameter name="udid" value="G8S1LV05133401MM"/>
+        <parameter name="platformName" value="android"/>
+        <parameter name="systemPort" value="8882"/>
+        <classes>
+            <class name="tests.form.FormTest"/>
+            <class name="api_learning.parallel.Login"/>
+            <class name="api_learning.gson.TestGSON"/>
+            <class name="api_learning.testng.TestNGHooks02"/>
+            <class name="api_learning.testng.BaseTestNG"/>
+            <class name="api_learning.testng.Verifier"/>
+        </classes>
+    </test> <!-- G8S1LV05133401MM -->
+    <test thread-count="10" parallel="tests" name="emulator-5554">
+        <parameter name="platformVersion" value="15.0"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="platformName" value="android"/>
+        <parameter name="systemPort" value="8562"/>
+        <classes>
+            <class name="api_learning.testng.TestParameter02"/>
+            <class name="api_learning.testng.TestParameter"/>
+            <class name="api_learning.testng.TestNGHooks01"/>
+            <class name="api_learning.authen_exploring.LoginTestWithDataBuilder"/>
+            <class name="api_learning.authen_exploring.LoginTestWithDataProvider"/>
+            <class name="api_learning.authen_exploring.LoginTest"/>
+            <class name="tests.authen.LoginTestWithBaseTest"/>
+        </classes>
+    </test> <!-- emulator-5554 -->
+</suite> <!-- Regression -->
