@@ -19,19 +19,19 @@ public class DriverFactory implements MobileCapabilityTypeEx {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(PLATFORM_NAME, "Android");
         desiredCapabilities.setCapability(AUTOMATION_NAME, "uiautomator2");
-        desiredCapabilities.setCapability(UDID, "emulator-5554");
+        desiredCapabilities.setCapability(UDID, "3300d3672cca62b9");
         desiredCapabilities.setCapability(APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
         URL appiumServer = null;
 
         try {
-            appiumServer = new URL("http://192.168.8.16:4723/wd/hub");
+            appiumServer = new URL("http://localhost:4723/wd/hub");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         if (appiumServer == null)
-            throw new RuntimeException("Can't construct the appium server url @http://192.168.8.16:4723/wd/hub");
+            throw new RuntimeException("Can't construct the appium server url @http://localhost:4723/wd/hub");
 
         switch (platform) {
             case android:
@@ -49,9 +49,26 @@ public class DriverFactory implements MobileCapabilityTypeEx {
     }
 
     public AppiumDriver<MobileElement> getDriver(Platform platform, String udid, String systemPort, String platformVersion) {
+        String remoteInfoViaEnvVar = System.getenv("env");
+        String remoteInfoViaCommandVar = System.getProperty("env");
+        String isRemote = remoteInfoViaEnvVar == null ? remoteInfoViaCommandVar : remoteInfoViaEnvVar;
+
+        if(isRemote == null){
+            throw new IllegalArgumentException("Please provide env variable [env]!");
+        }
+
+        String targetServer = "https://localhost:4723/wd/hub";
+        if(isRemote.equals("true")){
+            String hubIPAdd = System.getenv("hub");
+            if(hubIPAdd == null) hubIPAdd = System.getProperty("hub");
+            if(hubIPAdd == null){
+                throw new IllegalArgumentException("Please provide hub ip address via env variable [hub]!");
+            }
+            targetServer = hubIPAdd + ":4444/wd/hub";
+        }
+
         if(appiumDriver == null) {
             URL appiumServer = null;
-            String targetServer = "http://192.168.8.16:4444/wd/hub";
             try {
                 appiumServer = new URL(targetServer);
             } catch (Exception e) {
